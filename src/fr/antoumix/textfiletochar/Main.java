@@ -8,8 +8,9 @@ public class Main {
 
 		File file = new File("TestFile.txt");
 		
-		System.out.println(TextFiletoChar.getCharAt(2, 0, file));
-
+        System.out.println("getCharAt("+ 1 +","+ 2 + ") : " + TextFiletoChar.getCharAt(5, 3, file));
+        System.out.println("getMaxxLength : " + TextFiletoChar.getMaxxLength(file));
+        System.out.println("getMaxyLength : " + TextFiletoChar.getMaxyLength(file));
 	}
 
 }

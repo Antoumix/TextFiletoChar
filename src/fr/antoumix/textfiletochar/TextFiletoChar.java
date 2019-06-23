@@ -10,8 +10,8 @@ public class TextFiletoChar {
 
 	public static char getCharAt(int x, int y, File file) {
 		
-		String lines[] = new String[100];
-		char c[][] = new char[100][100];
+		String lines[] = new String[getMaxyLength(file)];
+		char c[][] = new char[100][getMaxyLength(file)];
 		
 		try {
 			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
@@ -37,27 +37,64 @@ public class TextFiletoChar {
 			e.printStackTrace();
 		}
 		
-		return c[x][y];
+		return c[x-1][y-1];
 		
 	}
 	
 	
-	public static void getMaxxLength(File file) {
-
+	
+	public static int getMaxxLength(File file) {
+		int x = 0;
+		String lines[] = new String[getMaxyLength(file)];
 		
+		try {
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
+			String line = reader.readLine();
+			
+			int lineNumber = 0;
+			
+			while(line != null) {
+				lines[lineNumber] = line;
+				line = reader.readLine();
+				
+				lineNumber++;
+			}
+			reader.close();
+			
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
 		
+		for(int i = 0; i < getMaxyLength(file); i++) {
+			
+			if(lines[i].length() > x) x = lines[i].length();
+			
+		}
 		
+		return x;
 	}
 	
-	public static void getMaxyLength(File file) {
-
+	public static int getMaxyLength(File file) {
+		int y = 0;
 		
-		
-		
-	}
-	
-	private void getLength() {
-		
+		try {
+			BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(file), "UTF-8"));
+			String line = reader.readLine();
+			
+			
+			while(line != null) {
+				
+				line = reader.readLine();
+				y++;
+			}
+			
+			reader.close();
+			
+		}catch(IOException e) {
+			e.printStackTrace();
+		}
+		return y;
 	}
 
 }
