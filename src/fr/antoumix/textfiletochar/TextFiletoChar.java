@@ -37,7 +37,7 @@ public class TextFiletoChar {
 			e.printStackTrace();
 		}
 		
-		return c[x-1][y-1];
+		return c[x][y];
 		
 	}
 	
