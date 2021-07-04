@@ -1,0 +1,7 @@
+<colors>
+  <color char="#">255, 255, 255</color>
+  <color char=".">0, 0, 0</color>
+  <color char="=">242, 63, 102</color>
+  <color char="O">21, 232, 21</color>
+  <color char="@">48, 216, 219</color>
+</colors>
